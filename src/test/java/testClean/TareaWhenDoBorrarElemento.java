@@ -29,13 +29,13 @@ public class TareaWhenDoBorrarElemento {
 
         String expectResult = tittle;
         String actualResult = listScreen.firstTaskLabel.getText();
-        Assertions.assertEquals(expectResult,actualResult,"ERROR la tarea no fue creada");
+        Assertions.assertEquals(expectResult,actualResult,"ERROR el elemento no fue creada");
 
         listScreen.tittleButton.click();
         toolBar.eliminar.click();
         ventanaEmergenteEliminacion.confirmarEliminar.click();
 
-        Assertions.assertFalse(listScreen.firstTaskLabel.isControlDisplayed());
+        Assertions.assertFalse(listScreen.firstTaskLabel.isControlDisplayed(), "ERROR el elemento no fue eliminado");
     }
 
     @AfterEach
